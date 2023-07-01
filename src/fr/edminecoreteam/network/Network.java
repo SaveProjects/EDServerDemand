@@ -14,7 +14,7 @@ import fr.edminecoreteam.network.database.InstanceSQL;
 import fr.edminecoreteam.network.database.ServerData;
 import fr.edminecoreteam.network.database.UtilsSQL;
 import fr.edminecoreteam.network.scanners.DeleteFoldersScanner;
-import fr.edminecoreteam.network.scanners.run.DeleteFolders;
+import fr.edminecoreteam.network.scanners.run.DeleteFoldersRunnable;
 import fr.edminecoreteam.network.scanners.run.OfflinesServersScannerRunnable;
 import fr.edminecoreteam.network.scanners.run.PlayersOnlineScannerRunnable;
 import fr.edminecoreteam.network.scanners.run.ServerScannerRunnable;
@@ -56,7 +56,7 @@ public class Network extends Plugin
         loadServers();
         executeCommand("greload");
         getProxy().getScheduler().schedule((Plugin)this, (Runnable)new ServerScannerRunnable(), 2L, 25L, TimeUnit.SECONDS);
-        getProxy().getScheduler().schedule((Plugin)this, (Runnable)new DeleteFolders(), 1L, 50L, TimeUnit.SECONDS);
+        getProxy().getScheduler().schedule((Plugin)this, (Runnable)new DeleteFoldersRunnable(), 1L, 50L, TimeUnit.SECONDS);
         getProxy().getScheduler().schedule((Plugin)this, (Runnable)new OfflinesServersScannerRunnable(), 1L, 25L, TimeUnit.SECONDS);
         getProxy().getScheduler().schedule((Plugin)this, (Runnable)new PlayersOnlineScannerRunnable(), 1L, 15L, TimeUnit.SECONDS);
         getProxy().getPluginManager().registerCommand(this, (Command)new ServerInfoCommand(this));
