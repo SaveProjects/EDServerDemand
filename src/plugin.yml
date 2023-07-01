@@ -1,0 +1,4 @@
+name: NewEDServerDemand
+version: 1.0
+main: fr.edminecoreteam.network.Network
+author: N12cf
