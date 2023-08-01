@@ -13,7 +13,7 @@ public class ServerCommand extends Command
 {
     public ServerCommand(Network network)
     {
-        super("edserver", "edmine.admin");
+        super("edserver", "edmine.admin", "srv", "edsrv");
     }
 
     public void execute(CommandSender sender, String[] args) {
