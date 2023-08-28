@@ -28,6 +28,7 @@ public class Messages
         sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedserver switch §a[serveur] §8§l» §7Changer de serveur."));
         sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedserver start §a[serveur] §8§l» §7Démmarer un serveur."));
         sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedserver stop §a[serveur] §8§l» §7Arrêter un serveur."));
+        sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedserver stopAll §a[groupe] §8§l» §7Arrêter un groupe de serveur."));
         sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedserver check §a[serveur] §8§l» §7Analyser un serveur dans la bdd."));
         sender.sendMessage(TextComponent.fromLegacyText(""));
     }

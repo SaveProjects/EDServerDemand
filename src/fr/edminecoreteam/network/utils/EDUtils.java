@@ -6,6 +6,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 import fr.edminecoreteam.network.Network;
 import fr.edminecoreteam.network.database.ServerData;
@@ -61,6 +63,19 @@ public class EDUtils
             srv.stop();
             sender.sendMessage(TextComponent.fromLegacyText("§7Tentative d'arrêt du serveur §a" + serverName +  "§7 en cours..."));
         }
+    }
+
+    public static void stopAllServerGroup(CommandSender sender, String groupName) {
+        String startGroupName = groupName.substring(0, 1).toUpperCase();
+        String endGroupName = groupName.substring(1).toLowerCase();
+        for (String srv : network.getServersList()) {
+            if (srv.startsWith(startGroupName + endGroupName)) {
+                if (PingServers.ping(srv)) {
+                    stopServer(sender, srv);
+                }
+            }
+        }
+
     }
 
     public static void copyContent(File source, File target)
