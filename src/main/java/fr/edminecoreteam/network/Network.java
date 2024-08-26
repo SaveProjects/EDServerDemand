@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import fr.edminecoreteam.network.command.BuildCommand;
 import fr.edminecoreteam.network.command.ServerCommand;
 import fr.edminecoreteam.network.command.ServerInfoCommand;
 import fr.edminecoreteam.network.database.InstanceSQL;
@@ -60,6 +61,7 @@ public class Network extends Plugin
         getProxy().getScheduler().schedule((Plugin)this, (Runnable)new PlayersOnlineScannerRunnable(), 1L, 15L, TimeUnit.SECONDS);
         getProxy().getPluginManager().registerCommand(this, (Command)new ServerInfoCommand(this));
         getProxy().getPluginManager().registerCommand(this, (Command)new ServerCommand(this));
+        getProxy().getPluginManager().registerCommand(this, (Command)new BuildCommand(this));
         getLogger().info("loaded");
     }
 
