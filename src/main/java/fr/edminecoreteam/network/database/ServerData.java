@@ -13,9 +13,8 @@ import java.sql.SQLException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import org.yaml.snakeyaml.Yaml;
-
 import fr.edminecoreteam.network.Network;
+import org.yaml.snakeyaml.Yaml;
 
 public class ServerData
 {
